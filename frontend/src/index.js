@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { RegistrationProvider } from "./context/RegistrationContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <RegistrationProvider>
+        <App />
+      </RegistrationProvider>
     </React.StrictMode>
   </BrowserRouter>
 );
