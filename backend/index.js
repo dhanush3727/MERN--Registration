@@ -6,7 +6,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/empolyee");
+const MONGO_URL =
+  "mongodb+srv://dhanushs4827:dhanush3727@cluster0.ncalmkc.mongodb.net/mern-registration?retryWrites=true&w=majority&appName=Cluster0";
+
+mongoose
+  .connect(MONGO_URL)
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // Create a server
 app.listen(3001, () => {
